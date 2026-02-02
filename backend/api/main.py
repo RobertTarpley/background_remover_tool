@@ -37,7 +37,7 @@ async def remove_bg(file: UploadFile = File(...)):
 
     buffer = io.BytesIO()
     output.save(buffer, format="PNG")
-    # buffer.seek(0)
+
 
     # Return using Response to stop FastAPI from trying to decode your bytes
     return Response(content=buffer.getvalue(), media_type="image/png")
